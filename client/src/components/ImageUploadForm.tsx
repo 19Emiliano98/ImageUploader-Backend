@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
+import { Input } from '@mui/material';
+import Button from '@mui/material/Button';
+
 const ImageUploadForm: React.FC = () => {
+  const classes = useStyles();
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,9 +36,23 @@ const ImageUploadForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      <button onClick={handleUpload}>Upload Image</button>
+    <div className={classes.root}>
+      <Input 
+        type="file"
+        onChange={handleImageChange}
+        endAdornment
+        disableUnderline
+        classes={{ input: classes.input }}
+        inputProps={{ 'aria-label': 'custom input' }}
+        sx={{
+          //position: 'absolute',
+          width: '338px',
+          height: '218.903px',
+          borderRadius: '12px',
+          border: '1px dashed #97BEF4'
+        }}
+      />
+      <Button onClick={handleUpload} variant="contained">Upload Image</Button>
     </div>
   );
 };
