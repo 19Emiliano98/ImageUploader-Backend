@@ -8,6 +8,7 @@ function App() {
 
   const handleImageChange = (event:any) => {
     const imageFile = event.target.files[0];
+    console.log(event.target.files[0]);
     
     setSelectedImage(imageFile);
     setNameImage(imageFile.name)
@@ -40,10 +41,10 @@ function App() {
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      <button onClick={handleUpload}>Subir imagen</button>
-    </div>
+    <form method='POST' action={`${API}`} onSubmit={handleUpload} encType="multipart/form-data">
+      <input type="file" name='image' accept="image/*" onChange={handleImageChange} />
+      <button type='submit'>Subir imagen</button>
+    </form>
   );
 }
 
