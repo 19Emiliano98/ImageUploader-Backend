@@ -12,11 +12,11 @@ const App: React.FC = () => {
         sx={{
           display: 'flex', flexDirection: 'column',
           justifyContent: 'center', alignItems: 'center',
-          height: '95vh', mt: 8
+          height: '95vh', mt: -5
         }}
       >
         <CardUploader />
-        <Box sx={{ mt: 18 }}>
+        <Box sx={{ position: 'absolute', mt: 120 }}>
           <Footer />
         </Box>
       </Box>

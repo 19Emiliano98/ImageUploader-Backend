@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Input } from '@material-ui/core';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +15,11 @@ const useStyles = makeStyles(() => ({
     border: '1px dashed #97BEF4',
     margin: '312px 0px 0px -250px',
     //opacity: 0
+  },
+  button: {
+    width: 140,
+    height: 25,
+    border: '1px dashed #97BEF4',
   }
 }));
 
@@ -68,7 +73,6 @@ export const ImageUploadForm: React.FC = () => {
         classes={{ input: classes.input }}
         inputProps={{ 'aria-label': 'custom input' }}
         onChange={ handleImageChange }
-        
       />
       <Box
         sx={{
@@ -81,10 +85,26 @@ export const ImageUploadForm: React.FC = () => {
           Drag & Drop your image here
         </Typography>
       </Box>
-
-      {/* <Button onClick={handleUpload} sx={{ position: 'absolute' , mt: 17.5, ml: -8.8 }} variant='contained'>
-        Upload Image
-      </Button> */}
+      <Box
+        sx={{
+          mt: 18
+        }}
+      >
+        <Button 
+          sx={{
+            position: 'absolute'
+          }}
+          variant='contained'
+        >
+          Upload Image
+        </Button>
+        <Input 
+          type='file'
+          classes={{ input: classes.button }}
+          inputProps={{ 'aria-label': 'custom input' }}
+          onChange={ handleImageChange }
+        />
+      </Box>
     </Box>
   );
 }
