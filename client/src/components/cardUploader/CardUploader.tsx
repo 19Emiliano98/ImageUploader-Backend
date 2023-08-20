@@ -9,7 +9,6 @@ interface HijoProps {
 }
 
 const CardUploader: React.FC<HijoProps> = ({ isLoading }) => {
-  //const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // Esta función se pasará como prop al componente Hijo
   const driveIsLoading = (info: boolean) => {

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CardUploader from './components/cardUploader/CardUploader';
 import Footer from './components/footer/Footer.tsx';
 
-//import LoadingCard from './components/loadingCard/LoadingCard.tsx';
+import LoadingCard from './components/loadingCard/LoadingCard.tsx';
 //import CardConfirmation from './components/cardConfirmation/CardConfirmation.tsx';
 
 import { Box } from '@mui/material';
@@ -36,7 +36,7 @@ const App:React.FC = () => {
           height: '95vh', mt: -5
         }}
       >
-        <CardUploader isLoading={ driveIsLoading }/>
+        {isLoading ? <LoadingCard /> : <CardUploader isLoading={ driveIsLoading }/>}
         <Box sx={{ position: 'absolute', mt: 120 }}>
           <Footer />
         </Box>
