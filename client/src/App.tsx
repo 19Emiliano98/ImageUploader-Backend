@@ -1,6 +1,4 @@
-import React from 'react';
-
-//import { useState } from 'react';
+import React, { useState } from 'react';
 
 import CardUploader from './components/cardUploader/CardUploader';
 import Footer from './components/footer/Footer.tsx';
@@ -20,7 +18,14 @@ import { Box } from '@mui/material';
 ) */
 
 const App:React.FC = () => {
-  //const [ load, setLoad ] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // Esta función se pasará como prop al componente Hijo
+  const driveIsLoading = (info: boolean) => {
+    setIsLoading(info);
+  };
+
+  console.log(isLoading);
 
   return (
     <>
@@ -31,7 +36,7 @@ const App:React.FC = () => {
           height: '95vh', mt: -5
         }}
       >
-        <CardUploader />
+        <CardUploader isLoading={ driveIsLoading }/>
         <Box sx={{ position: 'absolute', mt: 120 }}>
           <Footer />
         </Box>

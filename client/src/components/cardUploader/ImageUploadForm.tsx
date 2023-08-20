@@ -1,9 +1,15 @@
+import React /*, { useState } */ from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Input } from '@material-ui/core';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import { Box, Typography, Button } from '@mui/material';
 
 const API = 'http://localhost:8080/upload';
+
+interface HijoProps {
+  isLoading: (info: boolean) => void; // Definimos una función callback como prop
+}
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -25,7 +31,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const ImageUploadForm: React.FC = () => {
+export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
   const classes = useStyles();
 
   const handleUpload = async (selectedImage:File | null) => {
@@ -53,6 +59,7 @@ export const ImageUploadForm: React.FC = () => {
       const selectedImage = e.target.files[0];
       
       handleUpload(selectedImage)
+      isLoading(true)
     }
   };
   
@@ -90,12 +97,7 @@ export const ImageUploadForm: React.FC = () => {
           mt: 18
         }}
       >
-        <Button 
-          sx={{
-            position: 'absolute'
-          }}
-          variant='contained'
-        >
+        <Button sx={{ position: 'absolute' }} variant='contained'>
           Upload Image
         </Button>
         <Input 

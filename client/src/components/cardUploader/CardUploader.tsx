@@ -1,8 +1,21 @@
+import React/* , { useState } */ from 'react';
+
 import { ImageUploadForm } from './ImageUploadForm.tsx';
 
 import { Card, CardContent, Typography } from '@mui/material';
 
-const CardUploader: React.FC = () => {
+interface HijoProps {
+  isLoading: (info: boolean) => void; // Definimos una función callback como prop
+}
+
+const CardUploader: React.FC<HijoProps> = ({ isLoading }) => {
+  //const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  // Esta función se pasará como prop al componente Hijo
+  const driveIsLoading = (info: boolean) => {
+    isLoading(info);
+  };
+
   return (
     <Card 
       sx={{
@@ -23,7 +36,7 @@ const CardUploader: React.FC = () => {
           File should be Jpeg, Png,...
         </Typography>
         
-        <ImageUploadForm />
+        <ImageUploadForm isLoading={driveIsLoading}/>
         
         <Typography variant='body2' sx={{ fontSize: '18px', color: '#828282', mt: 3, mb: 8 }}>Or</Typography>
       </CardContent>
