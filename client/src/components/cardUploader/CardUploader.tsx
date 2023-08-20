@@ -2,7 +2,7 @@ import { ImageUploadForm } from './ImageUploadForm.tsx';
 
 import { Card, CardContent, Typography } from '@mui/material';
 
-const CardUploader = () => {
+const CardUploader: React.FC = () => {
   return (
     <Card 
       sx={{

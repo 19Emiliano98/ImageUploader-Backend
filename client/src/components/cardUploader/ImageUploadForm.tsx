@@ -3,6 +3,8 @@ import { Input } from '@material-ui/core';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import { Box, Typography, Button } from '@mui/material';
 
+const API = 'http://localhost:8080/upload';
+
 const useStyles = makeStyles(() => ({
   root: {
     width: '100%', // Expande la anchura del input
@@ -27,13 +29,11 @@ export const ImageUploadForm: React.FC = () => {
   const classes = useStyles();
 
   const handleUpload = async (selectedImage:File | null) => {
-    console.log(selectedImage);
-    
     if (selectedImage) {
       const formData = new FormData();
       formData.append('image', selectedImage);
       try {
-        const response = await fetch('http://localhost:8080/upload', {
+        const response = await fetch( API, {
           method: 'POST',
           body: formData,
         });
