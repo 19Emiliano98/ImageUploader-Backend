@@ -1,4 +1,4 @@
-import React /*, { useState } */ from 'react';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Input } from '@material-ui/core';
@@ -32,12 +32,14 @@ const useStyles = makeStyles(() => ({
 }));
 
 export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
+  //const [check, setCheck] = useState<boolean>(false);
   const classes = useStyles();
 
   const handleUpload = async (selectedImage:File | null) => {
     if (selectedImage) {
       const formData = new FormData();
       formData.append('image', selectedImage);
+      
       try {
         const response = await fetch( API, {
           method: 'POST',
@@ -53,7 +55,14 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
       }
     }
   };
-  
+
+  const uploadCheck = async () => {
+    await fetch( API, { method: 'GET' })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.error('Error uploading image:', err));
+  }
+
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const selectedImage = e.target.files[0];
@@ -61,6 +70,8 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
       handleUpload(selectedImage)
       isLoading(true)
     }
+    
+    uploadCheck()
   };
   
   return (
@@ -83,8 +94,8 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
       />
       <Box
         sx={{
-          display: 'flex', flexDirection: 'column', alignItems: 'center',
-          mt: '3.5vh'
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', mt: '3.5vh'
         }}
       >
         <AddPhotoAlternateOutlinedIcon sx={{ fontSize: '150px', color: '#BDBDBD' }}/>
@@ -92,11 +103,7 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
           Drag & Drop your image here
         </Typography>
       </Box>
-      <Box
-        sx={{
-          mt: 18
-        }}
-      >
+      <Box sx={{ mt: 18 }}>
         <Button sx={{ position: 'absolute' }} variant='contained'>
           Upload Image
         </Button>
