@@ -60,7 +60,7 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
     await fetch( API, { method: 'GET' })
       .then(res => res.json())
       .then(data => console.log(data))
-      .catch(err => console.error('Error uploading image:', err));
+      .catch(err => console.error('Error uploading image:', err))
   }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

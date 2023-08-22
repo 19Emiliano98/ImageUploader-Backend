@@ -26,7 +26,7 @@ const upload = multer({ storage });
 app.get('/upload', (_req: Request, res: Response) => {
   
   const filenames = fs.readdirSync(__dirname + '/uploads');
-
+  console.log(filenames);
   res.json(filenames[filenames.length - 1]);
 })
 
