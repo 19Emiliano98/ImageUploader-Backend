@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 
-import CardUploader from './components/cardUploader/CardUploader';
 import Footer from './components/footer/Footer.tsx';
-
 import LoadingCard from './components/loadingCard/LoadingCard.tsx';
-//import CardConfirmation from './components/cardConfirmation/CardConfirmation.tsx';
+import CardConfirmation from './components/cardConfirmation/CardConfirmation.tsx';
 
 import { Box } from '@mui/material';
 
-/* const uploadImagesZone = (
-  <>
-    <CardUploader />
-    <Box sx={{ position: 'absolute', mt: 120 }}>
-      <Footer />
-    </Box>
-  </>
-) */
+const CardUploader = lazy(() => import('./components/cardUploader/CardUploader'));
 
-const App:React.FC = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+interface dataSending {
+  enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
+}
 
-  // Esta función se pasará como prop al componente Hijo
-  const driveIsLoading = (info: boolean) => {
-    setIsLoading(info);
+const App:React.FC<dataSending> = () => {
+  const [latestImage, setLatestImage] = useState<string>('');
+  const [check, setCheck] = useState<boolean>(false);
+  
+  const manejarInformacionDelHijo = (info: boolean) => {
+    setCheck(info)
   };
-
-  console.log(isLoading);
-
+  
+  if( check === true ){
+    // Hacer una solicitud a tu API para obtener la URL de la última imagen subida
+    fetch('http://localhost:8080/upload')
+      .then((response) => response.json())
+      .then((data) => {
+        // data debería contener la URL de la última imagen subida
+        setLatestImage(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching latest image:', error);
+      });
+  }
+  
   return (
     <>
       <Box
@@ -36,7 +42,9 @@ const App:React.FC = () => {
           height: '95vh', mt: -5
         }}
       >
-        {isLoading ? <LoadingCard /> : <CardUploader isLoading={ driveIsLoading }/>}
+        <Suspense fallback={ <LoadingCard /> }>
+          {check ? <CardConfirmation dataImage={latestImage}/> : <CardUploader enviarInformacion={manejarInformacionDelHijo}/>}
+        </Suspense>
         <Box sx={{ position: 'absolute', mt: 120 }}>
           <Footer />
         </Box>

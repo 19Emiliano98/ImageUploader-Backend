@@ -4,16 +4,18 @@ import { ImageUploadForm } from './ImageUploadForm.tsx';
 
 import { Card, CardContent, Typography } from '@mui/material';
 
-interface HijoProps {
-  isLoading: (info: boolean) => void; // Definimos una función callback como prop
+interface dataSending {
+  enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
 }
 
-const CardUploader: React.FC<HijoProps> = ({ isLoading }) => {
+const CardUploader: React.FC<dataSending> = ({ enviarInformacion }) => {
 
   // Esta función se pasará como prop al componente Hijo
-  const driveIsLoading = (info: boolean) => {
-    isLoading(info);
+  const manejarInformacionDelHijo = (info: boolean) => {
+    enviarInformacion(info);
   };
+
+
 
   return (
     <Card 
@@ -35,7 +37,7 @@ const CardUploader: React.FC<HijoProps> = ({ isLoading }) => {
           File should be Jpeg, Png,...
         </Typography>
         
-        <ImageUploadForm isLoading={driveIsLoading}/>
+        <ImageUploadForm enviarInformacion={manejarInformacionDelHijo}/>
         
         <Typography variant='body2' sx={{ fontSize: '18px', color: '#828282', mt: 3, mb: 8 }}>Or</Typography>
       </CardContent>

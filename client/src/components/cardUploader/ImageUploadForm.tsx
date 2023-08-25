@@ -7,10 +7,6 @@ import { Box, Typography, Button } from '@mui/material';
 
 const API = 'http://localhost:8080/upload';
 
-interface HijoProps {
-  isLoading: (info: boolean) => void; // Definimos una función callback como prop
-}
-
 const useStyles = makeStyles(() => ({
   root: {
     width: '100%', // Expande la anchura del input
@@ -31,9 +27,14 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
-  //const [check, setCheck] = useState<boolean>(false);
+interface dataSending {
+  enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
+}
+
+export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion }) => {
   const classes = useStyles();
+  let texto:boolean = false;
+  console.log(texto);
 
   const handleUpload = async (selectedImage:File | null) => {
     if (selectedImage) {
@@ -56,24 +57,24 @@ export const ImageUploadForm: React.FC<HijoProps> = ({ isLoading }) => {
     }
   };
 
-  const uploadCheck = async () => {
-    await fetch( API, { method: 'GET' })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.error('Error uploading image:', err))
-  }
+  const dataSending = () => {
+    // Cuando se hace clic en el botón, llamamos a la función callback del padre
+    texto = true
+    enviarInformacion(texto);
+  };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const selectedImage = e.target.files[0];
       
       handleUpload(selectedImage)
-      isLoading(true)
+      
+      dataSending()
     }
-    
-    uploadCheck()
   };
+
   
+
   return (
     <Box 
       className={classes.root}

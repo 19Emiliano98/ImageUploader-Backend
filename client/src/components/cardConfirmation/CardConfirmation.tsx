@@ -8,13 +8,17 @@ const API = 'http://localhost:8080/upload';
 fetch( API, { method: 'GET' })
     .then((response) => response.json())
     .then((result) => {
-      console.log('Success:' + result);
+      console.log('Success: ' + result);
     })
     .catch((error) => {
       console.error('Error:' + error);
     });
 
-const CardConfirmation:React.FC = () => {
+interface propChild {
+  dataImage: string; // Define el tipo de miVariable
+}
+
+const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
   return (
     <Card 
       sx={{
@@ -35,7 +39,7 @@ const CardConfirmation:React.FC = () => {
         <CardMedia
           component="img"
           height="194"
-          image="/static/images/cards/paella.jpg"
+          image= {dataImage}
           alt="test"
         />
       </CardContent>

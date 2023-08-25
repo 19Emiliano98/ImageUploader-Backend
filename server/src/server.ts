@@ -9,7 +9,7 @@ const app:Express = express();
 app.use(cors());
 
 // Static Middleware
-app.use('/static', express.static(__dirname + '/uploads'));
+app.use('/imagesProvider', express.static(__dirname + '/uploads'));
 
 // Configuración de Multer para manejar la carga de archivos
 const storage = multer.diskStorage({
@@ -24,10 +24,8 @@ const upload = multer({ storage });
 
 // Ruta para obtener la imagen
 app.get('/upload', (_req: Request, res: Response) => {
-  
   const filenames = fs.readdirSync(__dirname + '/uploads');
-  console.log(filenames);
-  res.json(filenames[filenames.length - 1]);
+  res.json(`http://localhost:8080/imagesProvider/${filenames[filenames.length - 1]}`);
 })
 
 // Ruta para cargar una imagen
