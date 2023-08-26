@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography, TextField } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const API = 'http://localhost:8080/upload';
@@ -40,8 +40,17 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
           component="img"
           height="194"
           image= {dataImage}
-          alt="test"
+          alt="Imagen Subida"
         />
+        <Box>
+          <TextField 
+            /* sx={{
+              
+            }} */
+            label="Outlined"
+            variant="outlined"
+          />
+        </Box>
       </CardContent>
     </Card>
   )
