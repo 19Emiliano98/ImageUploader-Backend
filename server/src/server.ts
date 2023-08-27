@@ -8,10 +8,8 @@ const PORT:number = 8080;
 const app:Express = express();
 app.use(cors());
 
-// Static Middleware
 app.use('/imagesProvider', express.static(__dirname + '/uploads'));
 
-// Configuración de Multer para manejar la carga de archivos
 const storage = multer.diskStorage({
   destination: './src/uploads',
   filename: (_req, file, cb) => {

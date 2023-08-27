@@ -14,16 +14,17 @@ const useStyles = makeStyles(() => ({
   input: {
     display: 'block',
     position: 'absolute',
-    width: 498,
+    width: 580,
     height: 325,
     border: '1px dashed #97BEF4',
-    margin: '312px 0px 0px -250px',
-    //opacity: 0
+    margin: '312px 0px 0px -291px',
+    opacity: 0
   },
   button: {
     width: 140,
-    height: 25,
+    height: 21,
     border: '1px dashed #97BEF4',
+    opacity: 0
   }
 }));
 
@@ -34,8 +35,7 @@ interface dataSending {
 export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion }) => {
   const classes = useStyles();
   let texto:boolean = false;
-  console.log(texto);
-
+  
   const handleUpload = async (selectedImage:File | null) => {
     if (selectedImage) {
       const formData = new FormData();
@@ -56,25 +56,21 @@ export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion }) =>
       }
     }
   };
-
+  
   const dataSending = () => {
     // Cuando se hace clic en el botón, llamamos a la función callback del padre
     texto = true
     enviarInformacion(texto);
   };
-
+  
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       const selectedImage = e.target.files[0];
-      
       handleUpload(selectedImage)
-      
       dataSending()
     }
   };
-
   
-
   return (
     <Box 
       className={classes.root}

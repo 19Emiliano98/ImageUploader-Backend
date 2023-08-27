@@ -5,7 +5,7 @@ import { ImageUploadForm } from './ImageUploadForm.tsx';
 import { Card, CardContent, Typography } from '@mui/material';
 
 interface dataSending {
-  enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
+  enviarInformacion: (info: boolean) => void;
 }
 
 const CardUploader: React.FC<dataSending> = ({ enviarInformacion }) => {
