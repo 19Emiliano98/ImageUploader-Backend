@@ -1,24 +1,21 @@
-import React from 'react'
+//import React from 'react';
+import React from 'react';
 
-import { Box, Card, CardContent, CardMedia, Typography, TextField } from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography, TextField, Button } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
-const API = 'http://localhost:8080/upload';
-
-fetch( API, { method: 'GET' })
-    .then((response) => response.json())
-    .then((result) => {
-      console.log('Success: ' + result);
-    })
-    .catch((error) => {
-      console.error('Error:' + error);
-    });
-
 interface propChild {
   dataImage: string; // Define el tipo de miVariable
 }
 
 const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
+  const copyToClipboard = () => {
+    const source = document.getElementById('clipBoardValue') as HTMLInputElement | null;
+    
+    if (source != null) {
+      navigator.clipboard.writeText(source.value)
+    }
+  }
+  console.log(dataImage);
   return (
     <Card 
       sx={{
@@ -44,12 +41,11 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
         />
         <Box>
           <TextField 
-            /* sx={{
-              
-            }} */
-            label="Outlined"
+            id='clipBoardValue'
+            value={dataImage}
             variant="outlined"
           />
+          <Button variant="contained" onClick={() => copyToClipboard()}>Copy to Clipboard</Button>
         </Box>
       </CardContent>
     </Card>

@@ -9,14 +9,11 @@ interface dataSending {
 }
 
 const CardUploader: React.FC<dataSending> = ({ enviarInformacion }) => {
-
-  // Esta función se pasará como prop al componente Hijo
+  
   const manejarInformacionDelHijo = (info: boolean) => {
     enviarInformacion(info);
   };
-
-
-
+  
   return (
     <Card 
       sx={{
