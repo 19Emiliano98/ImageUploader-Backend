@@ -11,7 +11,7 @@ app.use(cors());
 app.use('/imagesProvider', express.static(__dirname + '/uploads'));
 
 const storage = multer.diskStorage({
-  destination: './src/uploads',
+  destination: `${__dirname}/uploads`,
   filename: (_req, file, cb) => {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     const fileName = file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname);
