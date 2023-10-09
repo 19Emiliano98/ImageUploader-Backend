@@ -21,9 +21,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Ruta para obtener la imagen
-app.get('/upload', (_req: Request, res: Response) => {
+app.get('/getimage', (_req: Request, res: Response) => {
   const filenames = fs.readdirSync(__dirname + '/uploads');
-  res.json(`http://localhost:8080/imagesProvider/${filenames[filenames.length - 1]}`);
+  res.redirect(`/imagesProvider/${filenames[filenames.length - 1]}`);
 })
 
 // Ruta para cargar una imagen
@@ -35,5 +35,5 @@ app.post('/upload', upload.single('image'), (req: Request, res: Response) => {
 });
 
 app.listen( PORT, () => {
-  console.log( `Example app listening on port: ${PORT}. Login in: http://localhost:${PORT}/upload` );
+  console.log( `Example app listening on port: ${PORT}.` );
 });
