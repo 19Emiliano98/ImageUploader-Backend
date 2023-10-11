@@ -6,8 +6,8 @@ import fs from 'fs';
 
 const PORT:number = 8080;
 const app:Express = express();
-// const domainLocal:string = "http://localhost:8080";
-const domainWeb:string = "https://imageuploader-challengue.1.us-1.fl0.io";
+// const domain:string = "http://localhost:8080";
+const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
 app.use(cors());
 
 app.use('/imagesProvider', express.static(__dirname + '/uploads'));
@@ -27,7 +27,7 @@ const upload = multer({ storage });
 // Ruta para obtener la imagen
 app.get('/getimage', (_req: Request, res: Response) => {
   const filenames = fs.readdirSync(__dirname + '/uploads');
-  res.json(`${domainWeb}/imagesProvider/${filenames[filenames.length - 1]}`);
+  res.json(`${domain}/imagesProvider/${filenames[filenames.length - 1]}`);
 })
 
 // Ruta para cargar una imagen

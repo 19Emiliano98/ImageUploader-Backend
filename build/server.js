@@ -10,8 +10,11 @@ const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 const PORT = 8080;
 const app = (0, express_1.default)();
+// const domain:string = "http://localhost:8080";
+const domain = "https://imageuploader-challengue.1.us-1.fl0.io";
 app.use((0, cors_1.default)());
 app.use('/imagesProvider', express_1.default.static(__dirname + '/uploads'));
+console.log(__dirname);
 const storage = multer_1.default.diskStorage({
     destination: `${__dirname}/uploads`,
     filename: (_req, file, cb) => {
@@ -24,7 +27,7 @@ const upload = (0, multer_1.default)({ storage });
 // Ruta para obtener la imagen
 app.get('/getimage', (_req, res) => {
     const filenames = fs_1.default.readdirSync(__dirname + '/uploads');
-    res.redirect(`/imagesProvider/${filenames[filenames.length - 1]}`);
+    res.json(`${domain}/imagesProvider/${filenames[filenames.length - 1]}`);
 });
 // Ruta para cargar una imagen
 app.post('/upload', upload.single('image'), (req, res) => {
