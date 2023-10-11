@@ -23,7 +23,7 @@ const upload = multer({ storage });
 // Ruta para obtener la imagen
 app.get('/getimage', (_req: Request, res: Response) => {
   const filenames = fs.readdirSync(__dirname + '/uploads');
-  res.redirect(`/imagesProvider/${filenames[filenames.length - 1]}`);
+  res.json(`/imagesProvider/${filenames[filenames.length - 1]}`);
 })
 
 // Ruta para cargar una imagen
