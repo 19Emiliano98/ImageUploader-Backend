@@ -7,13 +7,11 @@ import fs from 'fs';
 const PORT:number = 8080;
 const app:Express = express();
 
-// const domain:string = "http://localhost:8080";
-const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
+const domain:string = "http://localhost:8080";
+//const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
+
 app.use(cors());
-
 app.use('/imagesProvider', express.static(__dirname + '/uploads'));
-
-console.log(__dirname);
 
 const storage = multer.diskStorage({
   destination: `${__dirname}/uploads`,
