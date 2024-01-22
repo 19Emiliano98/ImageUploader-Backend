@@ -10,8 +10,8 @@ const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
 require("dotenv/config");
 const app = (0, express_1.default)();
-const domain = `http://localhost:${process.env.PORT || 8080}`;
-//const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
+// const domain:string = `http://localhost:${process.env.PORT || 8080}`;
+const domain = "https://imageuploaderchallengue.adaptable.app";
 app.use((0, cors_1.default)());
 app.use('/imagesProvider', express_1.default.static(__dirname + '/uploads'));
 const storage = multer_1.default.diskStorage({
