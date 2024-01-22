@@ -3,11 +3,10 @@ import multer from 'multer';
 import cors from 'cors';
 import path from 'path';
 import fs from 'fs';
-
-const PORT:number = 8080;
+import 'dotenv/config';
 const app:Express = express();
 
-const domain:string = "http://localhost:8080";
+const domain:string = `http://localhost:${process.env.PORT || 8080}`;
 //const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
 
 app.use(cors());
@@ -37,6 +36,6 @@ app.post('/upload', upload.single('image'), (req: Request, res: Response) => {
   return res.status(200).json({ message: 'Imagen cargada exitosamente' });
 });
 
-app.listen( PORT, () => {
-  console.log( `Example app listening on port: ${PORT}.` );
+app.listen( process.env.PORT || 8080, () => {
+  console.log( `Example app listening on port: ${process.env.PORT || 8080}.` );
 });
