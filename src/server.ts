@@ -6,8 +6,8 @@ import fs from 'fs';
 import 'dotenv/config';
 const app:Express = express();
 
-const domain:string = `http://localhost:${process.env.PORT || 8080}`;
-//const domain:string = "https://imageuploader-challengue.1.us-1.fl0.io";
+// const domain:string = `http://localhost:${process.env.PORT || 8080}`;
+const domain:string = "https://imageuploaderchallengue.adaptable.app";
 
 app.use(cors());
 app.use('/imagesProvider', express.static(__dirname + '/uploads'));
