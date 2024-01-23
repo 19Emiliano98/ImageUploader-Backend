@@ -52,24 +52,18 @@ En este proyecto se logró:
 
 Aqui solo podran observar el codigo del Backend pero en el siguiente link podran observar el codigo del Frontend: https://github.com/19Emiliano98/ImageUploader-Front
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 
 
-### Built With
+### Creado con:
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+En estas eccion voy a mostrar las librerias, frameworks y lenguajes que he utilizado.
 
 * [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Node][Node.js]][node-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 
 
