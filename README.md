@@ -12,17 +12,14 @@
   <summary>Tabla de Contenidos</summary>
   <ul>
     <li><a href="#Sobre el Proyecto">Sobre el Proyecto</a></li>
-    <li><a href="#Creado con:">Creado con...</a></li>
+    <li><a href="#Creado con">Creado con...</a></li>
     <li><a href="#Instalación">Instalación</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#Contacto">Contacto</a></li>
   </ul>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
-
-[![Product Name Screen Shot][product-screenshot]](https://image-challengue-uploader.netlify.app)
 
 En este trabajo se realiza el desafio y la practica del manejo de imagenes, el proposito basicamente era poder cargar imagenes al servidor y visualizarlas mediante un link y tambien
 mostrandose apenas se cargaba.
@@ -34,7 +31,6 @@ En este proyecto se logró:
 
 Aqui solo podran observar el codigo del Backend pero en el siguiente link podran observar el codigo del Frontend: https://github.com/19Emiliano98/ImageUploader-Front
 
-<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 ### Creado con:
 
@@ -42,8 +38,6 @@ En esta seccion voy a mostrar los lenguajes y frameworks que he utilizado.
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-plain.svg" title="Typescript" alt="Typescript" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
-
-<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 
 ### Instalación
@@ -63,11 +57,8 @@ Debajo veras una lista de pasos para clonar el reposito y comenzar con el uso de
    PORT = 'Ingresa el numero de puerto';
    ```
 
-<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 <!-- CONTACT -->
 ## Contacto
 
 Enviame un mail a => emiliano.caballero98@gmail.com
-
-<p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
