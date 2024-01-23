@@ -11,11 +11,11 @@
 <details>
   <summary>Tabla de Contenidos</summary>
   <ul>
-    <li><a href="#about-the-project">Sobre el Proyecto</a></li>
-    <li><a href="#built-with">Creado con...</a></li>
-    <li><a href="#installation">Instalación</a></li>
+    <li><a href="#Sobre el Proyecto">Sobre el Proyecto</a></li>
+    <li><a href="#Creado con:">Creado con...</a></li>
+    <li><a href="#Instalación">Instalación</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#Contacto">Contacto</a></li>
   </ul>
 </details>
 
@@ -66,7 +66,7 @@ Debajo veras una lista de pasos para clonar el reposito y comenzar con el uso de
 <p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
 <!-- CONTACT -->
-## Contact
+## Contacto
 
 Enviame un mail a => emiliano.caballero98@gmail.com
 
