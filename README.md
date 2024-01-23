@@ -58,9 +58,10 @@ Aqui solo podran observar el codigo del Backend pero en el siguiente link podran
 
 ### Creado con:
 
-En estas eccion voy a mostrar las librerias, frameworks y lenguajes que he utilizado.
+En esta seccion voy a mostrar las librerias, frameworks y lenguajes que he utilizado.
 
-* <img src="https://images.app.goo.gl/QiQhB8mc9ARkr29JA"/>
+* <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-plain.svg" title="Typescript" alt="Typescript" width="40" height="40"/>&nbsp;
+* <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
 
 <p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
