@@ -7,17 +7,6 @@
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Tabla de Contenidos</summary>
-  <ul>
-    <li><a href="#Sobre el Proyecto">Sobre el Proyecto</a></li>
-    <li><a href="#Creado con">Creado con...</a></li>
-    <li><a href="#Instalación">Instalación</a></li>
-    <li><a href="#Contacto">Contacto</a></li>
-  </ul>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
 
