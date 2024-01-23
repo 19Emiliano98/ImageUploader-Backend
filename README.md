@@ -1,37 +1,23 @@
 <a name="readme-top"></a>
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
 
-  <h3 align="center">Image Uploader Challenge</h3>
+  <h1 align="center">Image Uploader Challenge</h1>
 
 </div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Tabla de Contenidos</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">Sobre el Proyecto</a>
-      <ul>
-        <li><a href="#built-with">Creado con...</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+  <ul>
+    <li><a href="#about-the-project">Sobre el Proyecto</a></li>
+    <li><a href="#built-with">Creado con...</a></li>
+    <li><a href="#installation">Instalación</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
-  </ol>
+  </ul>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
@@ -50,11 +36,9 @@ Aqui solo podran observar el codigo del Backend pero en el siguiente link podran
 
 <p align="right">(<a href="#readme-top">Volver al principio</a>)</p>
 
-
-
 ### Creado con:
 
-En esta seccion voy a mostrar las librerias, frameworks y lenguajes que he utilizado.
+En esta seccion voy a mostrar los lenguajes y frameworks que he utilizado.
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-plain.svg" title="Typescript" alt="Typescript" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" title="NodeJS" alt="NodeJS" width="40" height="40"/>&nbsp;
